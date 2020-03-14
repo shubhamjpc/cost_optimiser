@@ -41,12 +41,12 @@ from dash.dependencies import Input, Output
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app=dash.Dash(__name__,external_stylesheets=external_stylesheets)
 
-layout = html.Div([
+app.layout = html.Div([
                        html.H1('Basic Info',style={'textAlign': 'center','overflow':'hidden',
   'background-color':'#1F77b4',
   'color':'#FFFFFF',
   'padding': '20px 20px'
-}), html.Hr(),
+}), html.Hr()
 # html.Div([
 #     dcc.Graph(
 #             id='region_details',
