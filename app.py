@@ -1,13 +1,11 @@
 import dash
 import dash_table
-import dash_auth
 import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
 import re
 import plotly.express as px
-
-
+from dash.dependencies import Input, Output
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 competitor_data=pd.read_csv('competitors_data.csv')
 competitor_data.drop(columns=['Unnamed: 0'],inplace=True)
@@ -40,6 +38,8 @@ data_for_plotting_histogram_area=data_for_histogram_area[0:5]
 data_for_plotting_histogram_area_trip=data_for_histogram_area_trip_thrills[0:5]
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
+server = app.server
 
 app.layout = html.Div([
                        html.H1('Basic Info',style={'textAlign': 'center','overflow':'hidden',
@@ -160,6 +160,10 @@ html.Br(),
 
 html.Hr()
     ])
+
+
+
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)
