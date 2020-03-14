@@ -47,21 +47,7 @@ app.layout = html.Div([
   'background-color':'#1F77b4',
   'color':'#FFFFFF',
   'padding': '20px 20px'
-}), html.Hr(),
-html.Div([
-    dcc.Graph(
-            id='region_details',
-            style={'display': 'inline-block','width':'33%'},
-            figure={
-            'data': [
-                {'x':list(data_for_histogram['index']), 'y': data_for_histogram.region, 'type': 'bar', 'name': 'Competitors'},
-                {'x':list(data_for_histogram_trip_thrills['index']), 'y': data_for_histogram_trip_thrills.region, 'type': 'bar', 'name': 'Trip Thrills'},
-            ],
-            'layout': {
-                'title': 'Hotel Count Region-Wise'
-            }
-        }
-            )
+}), html.Hr()
 ])
 
 
