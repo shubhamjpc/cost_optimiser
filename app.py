@@ -6,10 +6,10 @@ import dash_html_components as html
 import pandas as pd
 import re
 import plotly.express as px
-from dash.dependencies import Input, Output
-VALID_USERNAME_PASSWORD_PAIRS = {
-    'hello': 'world'
-}
+
+VALID_USERNAME_PASSWORD_PAIRS = [
+    ['trip', 'thrills']
+]
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 competitor_data=pd.read_csv('competitors_data.csv')
 competitor_data.drop(columns=['Unnamed: 0'],inplace=True)
@@ -165,10 +165,6 @@ html.Br(),
 
 html.Hr()
     ])
-
-
-
-
 
 if __name__ == '__main__':
     app.run_server(debug=True)
