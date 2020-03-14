@@ -8,7 +8,7 @@ import re
 import plotly.express as px
 from dash.dependencies import Input, Output
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-
+competitor_data=pd.read_csv('competitors_data.csv')
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 server = app.server
