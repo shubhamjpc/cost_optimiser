@@ -43,19 +43,27 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
 app.layout = html.Div([
-    html.H2('Hello World'),
-    dcc.Dropdown(
-        id='dropdown',
-        options=[{'label': i, 'value': i} for i in ['LA', 'NYC', 'MTL']],
-        value='LA'
-    ),
-    html.Div(id='display-value')
+                       html.H1('Basic Info',style={'textAlign': 'center','overflow':'hidden',
+  'background-color':'#1F77b4',
+  'color':'#FFFFFF',
+  'padding': '20px 20px'
+}), html.Hr(),
+html.Div([
+    dcc.Graph(
+            id='region_details',
+            style={'display': 'inline-block','width':'33%'},
+            figure={
+            'data': [
+                {'x':list(data_for_histogram['index']), 'y': data_for_histogram.region, 'type': 'bar', 'name': 'Competitors'},
+                {'x':list(data_for_histogram_trip_thrills['index']), 'y': data_for_histogram_trip_thrills.region, 'type': 'bar', 'name': 'Trip Thrills'},
+            ],
+            'layout': {
+                'title': 'Hotel Count Region-Wise'
+            }
+        }
+            )
 ])
 
-@app.callback(dash.dependencies.Output('display-value', 'children'),
-              [dash.dependencies.Input('dropdown', 'value')])
-def display_value(value):
-    return 'You have selected "{}"'.format(value)
 
 if __name__ == '__main__':
     app.run_server(debug=True)
