@@ -46,8 +46,6 @@ auth = dash_auth.BasicAuth(
     app,
     VALID_USERNAME_PASSWORD_PAIRS
 )
-server = app.server
-
 app.layout = html.Div([
                        html.H1('Basic Info',style={'textAlign': 'center','overflow':'hidden',
   'background-color':'#1F77b4',
