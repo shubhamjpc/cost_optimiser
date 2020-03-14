@@ -195,21 +195,17 @@ html.Div([
 html.Br(),
 html.Br(),
 
-html.Hr(),
-    
-dcc.Link('Analysis Page', href='/apps/other',style={
-         'fontSize': 15,
-         'color':'black'})
+html.Hr()
     ])
 
-#
-#@app.callback(
-#    Output(component_id='graph_area_wise', component_property='children'),
-#    [Input(component_id='region', component_property='value')]
-#)
-#def update_output_div(input_value):
-#    return 'You\'ve entered "{}"'.format(input_value)
+
+@app.callback(
+    Output(component_id='graph_area_wise', component_property='children'),
+    [Input(component_id='region', component_property='value')]
+)
+def update_output_div(input_value):
+    return 'You\'ve entered "{}"'.format(input_value)
 
 
-#if __name__ == '__main__':
-#    app.run_server(debug=False)
+if __name__ == '__main__':
+    app.run_server(debug=False)
