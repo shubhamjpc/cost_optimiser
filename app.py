@@ -102,43 +102,6 @@ html.Div([
             
              )
     ,
-#html.Div([dcc.Dropdown(
-#        id='region',
-#        options=[
-#            {'label': i.capitalize(), 'value':i} for i in competitor_data.region.unique()       
-#        ],
-#        searchable=False,
-#        value=[],
-#        placeholder="Select a region",
-#        multi=True
-#    ,style={'display': 'inline-block','width':'50%'}),
-#    dcc.Dropdown(
-#        options=[
-#            {'label': i.capitalize(), 'value':i} for i in competitor_data.area.unique()       
-#        ],
-#        searchable=False,
-#        value=[],
-#        placeholder="Select an area",
-#        multi=True
-#    ,style={'display': 'inline-block','width':'50%'})]),
-#    html.Br(), 
-#    html.Label('Price Range',style={'fontWeight': 'bold'}),
-#    
-#    html.Br(),
-#    html.Br(),
-#    
-#    dcc.RangeSlider(
-#        id='price_slider',
-#        min=competitor_data.price.min(),
-#        max=competitor_data.price.max(),
-#        value=[competitor_data.price.min(),competitor_data.price.max()],
-#        marks={
-#        int(competitor_data.price.min()): {'label':'', 'style': {'color': '#77b0b1'}},
-#        5000: {'label': 'Budget','style': {'color': '#0B6623'}},
-#        15000: {'label': 'Standard','style': {'color': '#FFA500'}}, 
-#        int(competitor_data.price.max()): {'label':'Luxury', 'style': {'color': '#D21F3C'}}},
-#    ),
-#    html.Br(),
     html.Div(id='graph_area_wise'),
     html.H3('Competitors Data',style={'textAlign': 'center'
 }),
