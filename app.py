@@ -8,7 +8,7 @@ import plotly.express as px
 from dash.dependencies import Input, Output
 # from app import app
 # reading dataframe
-competitor_data=pd.read_csv('competitors_data.csv')
+competitor_data=pd.read_csv('../competitors_data.csv')
 competitor_data.drop(columns=['Unnamed: 0'],inplace=True)
 competitor_data.reset_index(drop=True,inplace=True)
 competitor_data = competitor_data[['homestay_name', 'area','region','place', 'price', 'amenities']]
@@ -18,7 +18,7 @@ competitor_data.place=competitor_data.place.apply(lambda x:x.strip())
 competitor_data.price=competitor_data.price.apply(lambda x:re.sub('[^0-9]','',x))
 competitor_data.price=competitor_data.price.apply(lambda x:int(x))
 # data cleaning trip thrills
-trip_thrills_data=pd.read_csv('homestays_trip_thrills.csv')
+trip_thrills_data=pd.read_csv('../homestays_trip_thrills.csv')
 trip_thrills_data.area=trip_thrills_data.area.fillna('unknown')
 trip_thrills_data.area=trip_thrills_data.area.apply(lambda x:x.strip())
 trip_thrills_data.region=trip_thrills_data.region.fillna('unknown')
